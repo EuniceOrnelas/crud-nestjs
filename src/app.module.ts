@@ -12,7 +12,7 @@ import { EmployeeService } from './service/employee/employee.service';
 @Module({
   imports: [
     // Configuración de la conexión a la base de datos MongoDB.
-    MongooseModule.forRoot('mongodb://localhost:27017', { dbName: 'employeedb' }),
+    MongooseModule.forRoot('mongodb://127.0.0.1:27017/employeedb?directConnection=true'),
     // Importación del esquema "Employee" para su uso en Mongoose.
     MongooseModule.forFeature([{ name: 'Employee', schema: EmployeeSchema }]),
   ],
